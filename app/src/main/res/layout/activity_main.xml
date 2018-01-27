@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- layoutで囲う -->
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Binding Objects -->
+    <data>
+        <!-- クラスの結び付け -->
+        <variable name="user" type="com.example.shinji.databinding.User" />
+
+        <variable name="handlers" type="com.example.shinji.databinding.SampleEventHandlers" />
+    </data>
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:text="@{user.firstName}"/>
+        <TextView android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:text="@{user.lastName}"/>
+
+        <Button android:id="@+id/button_change"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="CHANGE"
+                android:onClick="@{handlers.onChangeClick}"
+            />
+    </LinearLayout>
+
+
+</layout>
